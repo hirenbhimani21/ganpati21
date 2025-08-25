@@ -1,19 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="gu">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ganpati Mandal</title>
+  <title>Shree Narayan Cha Raja Yuvak Mandal</title>
+  
+  <!-- Bootstrap -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+  <!-- Lightbox (Zoom Gallery) -->
+  <link href="https://cdn.jsdelivr.net/npm/lightbox2@2.11.4/dist/css/lightbox.min.css" rel="stylesheet">
+
   <style>
     body {
       background: #f8f9fa;
       scroll-behavior: smooth;
+      font-family: 'Segoe UI', sans-serif;
     }
     header {
       background: #dc3545;
       color: #fff;
-      padding: 20px 0;
+      padding: 15px 0;
       text-align: center;
       position: sticky;
       top: 0;
@@ -21,24 +28,22 @@
     }
     header h1 {
       margin: 0;
-      font-size: 2rem;
+      font-size: 1.6rem;
+      font-weight: bold;
       animation: fadeInDown 1s ease;
     }
     nav a {
-      margin: 0 15px;
+      margin: 0 12px;
       color: white;
       text-decoration: none;
       font-weight: 500;
       transition: 0.3s;
     }
     nav a:hover {
-      text-decoration: underline;
       color: #ffe066;
+      text-decoration: underline;
     }
-    .section {
-      padding: 60px 20px;
-      animation: fadeInUp 1s ease;
-    }
+    .section { padding: 60px 20px; }
     /* Gallery Cards */
     .gallery-card {
       border: none;
@@ -49,7 +54,7 @@
       transition: transform 0.4s ease, box-shadow 0.4s ease;
     }
     .gallery-card:hover {
-      transform: scale(1.05);
+      transform: scale(1.03);
       box-shadow: 0 8px 20px rgba(0,0,0,0.2);
     }
     .gallery-card img,
@@ -57,14 +62,11 @@
       width: 100%;
       height: 250px;
       object-fit: cover;
-      transition: transform 0.5s ease;
     }
-    .gallery-card:hover img {
-      transform: scale(1.1);
-    }
-    /* About cards hover */
+    /* About cards */
     .card {
       transition: transform 0.4s ease, box-shadow 0.4s ease;
+      border-radius: 12px;
     }
     .card:hover {
       transform: translateY(-10px);
@@ -75,13 +77,9 @@
       color: #fff;
       text-align: center;
       padding: 15px;
-      animation: fadeInUp 1s ease;
+      font-size: 0.9rem;
     }
     /* Animations */
-    @keyframes fadeInUp {
-      from {opacity: 0; transform: translateY(20px);}
-      to {opacity: 1; transform: translateY(0);}
-    }
     @keyframes fadeInDown {
       from {opacity: 0; transform: translateY(-20px);}
       to {opacity: 1; transform: translateY(0);}
@@ -92,7 +90,7 @@
 
   <!-- Header -->
   <header>
-    <h1>Shree Narayan Cha Raja Yuvak Mandal</h1>
+    <h1>🙏 Shree Narayan Cha Raja Yuvak Mandal 🙏</h1>
     <nav>
       <a href="#gallery">Gallery</a>
       <a href="#home">Home</a>
@@ -101,35 +99,43 @@
     </nav>
   </header>
 
-  <!-- Gallery Section FIRST -->
+  <!-- Gallery Section -->
   <section id="gallery" class="section">
     <div class="container">
       <h2 class="text-center mb-4">📸 Gallery</h2>
       <div class="row">
-
+        
+        <!-- Image -->
         <div class="col-6 col-md-4">
           <div class="gallery-card">
-            <img src="img/1.jpeg" alt="Ganpati Image">
+            <a href="img/ganpati.jpeg" data-lightbox="gallery" data-title="Ganpati">
+              <img src="img/ganpati.jpeg" alt="Ganpati Image">
+            </a>
+          </div>
+        </div>
+        
+        <div class="col-6 col-md-4">
+          <div class="gallery-card">
+            <a href="img/1.jpeg" data-lightbox="gallery" data-title="Mandal Decoration">
+              <img src="img/1.jpeg" alt="Ganpati Decoration">
+            </a>
+          </div>
+        </div>
+        
+        <div class="col-6 col-md-4">
+          <div class="gallery-card">
+            <a href="img/2.jpeg" data-lightbox="gallery" data-title="Programs">
+              <img src="img/2.jpeg" alt="Programs Image">
+            </a>
           </div>
         </div>
 
-        <div class="col-6 col-md-4">
-          <div class="gallery-card">
-            <img src="img/2.jpeg" alt="Ganpati Image">
-          </div>
-        </div>
-
-        <div class="col-6 col-md-4">
+        <!-- Video -->
+        <div class="col-12 col-md-6">
           <div class="gallery-card">
             <video controls>
               <source src="img/entry.mp4" type="video/mp4">
             </video>
-          </div>
-        </div>
-
-        <div class="col-6 col-md-4">
-          <div class="gallery-card">
-            <img src="img/ganpati.jpeg" alt="Ganpati Image">
           </div>
         </div>
 
@@ -141,7 +147,7 @@
   <section id="home" class="section text-center bg-light">
     <div class="container">
       <h2>Welcome to Our Ganpati Mandal</h2>
-      <p>10 Din Ka Utsav – Shree Ganpati Bappa Morya 🙏</p>
+      <p>✨ 10 Din Ka Utsav – Shree Ganpati Bappa Morya 🙏</p>
     </div>
   </section>
 
@@ -194,8 +200,10 @@
   <!-- Contact Section -->
   <section id="contact" class="section bg-light">
     <div class="container text-center">
-      <h2>Contact Us</h2>
+      <h2>📞 Contact Us</h2>
       <p>📍 Location: Vadodara</p>
+      <p>📞 Phone: +91 98765 43210</p>
+      <a href="https://wa.me/919876543210" class="btn btn-success mt-2">WhatsApp પર સંપર્ક કરો</a>
     </div>
   </section>
 
@@ -204,6 +212,10 @@
     <p>© 2025 Shree Narayan Cha Raja Yuvak Mandal | All Rights Reserved</p>
   </footer>
 
+  <!-- JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lightbox2@2.11.4/dist/js/lightbox.min.js"></script>
 </body>
 </html>
+
+
