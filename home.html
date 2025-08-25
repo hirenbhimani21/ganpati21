@@ -8,47 +8,83 @@
   <style>
     body {
       background: #f8f9fa;
+      scroll-behavior: smooth;
     }
     header {
       background: #dc3545;
       color: #fff;
       padding: 20px 0;
       text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
     }
     header h1 {
       margin: 0;
       font-size: 2rem;
+      animation: fadeInDown 1s ease;
     }
     nav a {
       margin: 0 15px;
       color: white;
       text-decoration: none;
       font-weight: 500;
+      transition: 0.3s;
     }
     nav a:hover {
       text-decoration: underline;
+      color: #ffe066;
     }
     .section {
-      padding: 50px 20px;
+      padding: 60px 20px;
+      animation: fadeInUp 1s ease;
     }
+    /* Gallery Cards */
     .gallery-card {
       border: none;
       border-radius: 12px;
       overflow: hidden;
       box-shadow: 0 4px 8px rgba(0,0,0,0.1);
       margin-bottom: 20px;
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+    }
+    .gallery-card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
     }
     .gallery-card img,
     .gallery-card video {
       width: 100%;
       height: 250px;
       object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+    .gallery-card:hover img {
+      transform: scale(1.1);
+    }
+    /* About cards hover */
+    .card {
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+    }
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
     }
     footer {
       background: #343a40;
       color: #fff;
       text-align: center;
       padding: 15px;
+      animation: fadeInUp 1s ease;
+    }
+    /* Animations */
+    @keyframes fadeInUp {
+      from {opacity: 0; transform: translateY(20px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+    @keyframes fadeInDown {
+      from {opacity: 0; transform: translateY(-20px);}
+      to {opacity: 1; transform: translateY(0);}
     }
   </style>
 </head>
@@ -58,81 +94,19 @@
   <header>
     <h1>Shree Narayan Cha Raja Yuvak Mandal</h1>
     <nav>
+      <a href="#gallery">Gallery</a>
       <a href="#home">Home</a>
       <a href="#about">About Us</a>
-      <a href="#gallery">Gallery</a>
       <a href="#contact">Contact</a>
     </nav>
   </header>
 
-  <!-- Home Section -->
-  <section id="home" class="section text-center">
-    <div class="container">
-      <h2>Welcome to Our Ganpati Mandal</h2>
-      <p>10 Din Ka Utsav – Shree Ganpati Bappa Morya 🙏</p>
-    </div>
-  </section>
-
-  <!-- About Section -->
-  <section id="about" class="section bg-light">
-    <div class="container my-5">
-  <h2 class="text-center mb-4">અમારા વિશે</h2>
-  <p class="text-center lead">
-    શ્રી નારાયણ ચા રાજા યુવક મંડળ દર વર્ષે ભક્તિ અને ઉમંગ સાથે ગણેશોત્સવ ઉજવે છે.  
-  </p>
-
-  <div class="row text-center mt-4">
-    <div class="col-md-4 mb-3">
-      <div class="card shadow-sm p-3 h-100">
-        <h4 class="mb-2">🙏 ભક્તિ & સેવા</h4>
-        <p>
-          ૧૦ દિવસ સુધી વિવિધ ધાર્મિક કાર્યક્રમો, ભજન-કીર્તન અને સેવા કાર્યોનું આયોજન.
-        </p>
-      </div>
-    </div>
-
-    <div class="col-md-4 mb-3">
-      <div class="card shadow-sm p-3 h-100">
-        <h4 class="mb-2">🎉 ઉત્સવ</h4>
-        <p>
-          દરરોજ રાસ-ગરબા, સાંસ્કૃતિક કાર્યક્રમો અને ભક્તિ ગીતો સાથે આનંદમય વાતાવરણ.
-        </p>
-      </div>
-    </div>
-
-    <div class="col-md-4 mb-3">
-      <div class="card shadow-sm p-3 h-100">
-        <h4 class="mb-2">🌟 હેતુ</h4>
-        <p>
-          સમાજમાં ભક્તિ, સેવા ભાવના અને એકતા સાથે બાપ્પાના આશીર્વાદનો સંદેશ પહોંચાડવો.
-        </p>
-      </div>
-    </div>
-  </div>
-
-  <div class="text-center mt-4">
-    <h5>⏰ આરતી સમય</h5>
-    <p><strong>સવારે અને સાંજે : ૭:૪૫ થી ૮:૨૦</strong></p>
-  </div>
-
-  <div class="text-center mt-4">
-    <h5>💐 આમંત્રણ</h5>
-    <p>
-      આપ સૌને વિનંતી છે કે દરરોજ આરતીમાં આવો, બાપ્પાના દર્શન કરો અને રાસ-ગરબા સાથે ઉત્સવનો આનંદ માણો.  
-      <br> "બાપ્પા મોરયા!"
-    </p>
-  </div>
-</div>
-
-  </section>
-
-  <!-- Gallery Section -->
+  <!-- Gallery Section FIRST -->
   <section id="gallery" class="section">
     <div class="container">
-      <h2 class="text-center mb-4">Gallery</h2>
+      <h2 class="text-center mb-4">📸 Gallery</h2>
       <div class="row">
 
-        <!-- Example Images -->
         <div class="col-6 col-md-4">
           <div class="gallery-card">
             <img src="img/1.jpeg" alt="Ganpati Image">
@@ -145,7 +119,6 @@
           </div>
         </div>
 
-        <!-- Example Video -->
         <div class="col-6 col-md-4">
           <div class="gallery-card">
             <video controls>
@@ -154,7 +127,6 @@
           </div>
         </div>
 
-        <!-- Add more images/videos as needed -->
         <div class="col-6 col-md-4">
           <div class="gallery-card">
             <img src="img/ganpati.jpeg" alt="Ganpati Image">
@@ -165,12 +137,65 @@
     </div>
   </section>
 
+  <!-- Home Section -->
+  <section id="home" class="section text-center bg-light">
+    <div class="container">
+      <h2>Welcome to Our Ganpati Mandal</h2>
+      <p>10 Din Ka Utsav – Shree Ganpati Bappa Morya 🙏</p>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="section">
+    <div class="container my-5">
+      <h2 class="text-center mb-4">અમારા વિશે</h2>
+      <p class="text-center lead">
+        શ્રી નારાયણ ચા રાજા યુવક મંડળ દર વર્ષે ભક્તિ અને ઉમંગ સાથે ગણેશોત્સવ ઉજવે છે.  
+      </p>
+
+      <div class="row text-center mt-4">
+        <div class="col-md-4 mb-3">
+          <div class="card shadow-sm p-3 h-100">
+            <h4 class="mb-2">🙏 ભક્તિ & સેવા</h4>
+            <p>૧૦ દિવસ સુધી વિવિધ ધાર્મિક કાર્યક્રમો, ભજન-કીર્તન અને સેવા કાર્યોનું આયોજન.</p>
+          </div>
+        </div>
+
+        <div class="col-md-4 mb-3">
+          <div class="card shadow-sm p-3 h-100">
+            <h4 class="mb-2">🎉 ઉત્સવ</h4>
+            <p>દરરોજ રાસ-ગરબા, સાંસ્કૃતિક કાર્યક્રમો અને ભક્તિ ગીતો સાથે આનંદમય વાતાવરણ.</p>
+          </div>
+        </div>
+
+        <div class="col-md-4 mb-3">
+          <div class="card shadow-sm p-3 h-100">
+            <h4 class="mb-2">🌟 હેતુ</h4>
+            <p>સમાજમાં ભક્તિ, સેવા ભાવના અને એકતા સાથે બાપ્પાના આશીર્વાદનો સંદેશ પહોંચાડવો.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center mt-4">
+        <h5>⏰ આરતી સમય</h5>
+        <p><strong>સવારે અને સાંજે : ૭:૪૫ થી ૮:૨૦</strong></p>
+      </div>
+
+      <div class="text-center mt-4">
+        <h5>💐 આમંત્રણ</h5>
+        <p>
+          આપ સૌને વિનંતી છે કે દરરોજ આરતીમાં આવો, બાપ્પાના દર્શન કરો અને રાસ-ગરબા સાથે ઉત્સવનો આનંદ માણો.  
+          <br> "બાપ્પા મોરયા!"
+        </p>
+      </div>
+    </div>
+  </section>
+
   <!-- Contact Section -->
   <section id="contact" class="section bg-light">
     <div class="container text-center">
       <h2>Contact Us</h2>
-      <p>📍 Location: vadodara </p>
-      
+      <p>📍 Location: Vadodara</p>
     </div>
   </section>
 
