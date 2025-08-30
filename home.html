@@ -70,61 +70,6 @@
     /* Sections */
     .section { padding: 60px 20px; }
 
-    /* Gallery Cards */
-    .gallery-card {
-      border: none;
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-      margin-bottom: 20px;
-      transition: transform 0.4s ease, box-shadow 0.4s ease;
-    }
-      .gallery-container
-
- {
-    
-    height: 15vh !important;
- }
-    .gallery-card:hover {
-      transform: scale(1.03);
-      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-    }
-    .gallery-card img,
-    .gallery-card video {
-      width: 100%;
-      height: 250px;
-      object-fit: cover;
-    }
-
-    
-    /* About cards */
-    .card {
-      border-radius: 12px;
-      transition: transform 0.4s ease, box-shadow 0.4s ease;
-    }
-    .card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-    }
-
-    footer {
-      background: #343a40;
-      color: #fff;
-      text-align: center;
-      padding: 15px;
-      font-size: 0.9rem;
-    }
-
-    /* Animations */
-    @keyframes fadeInDown {
-      from {opacity: 0; transform: translateY(-20px);}
-      to {opacity: 1; transform: translateY(0);}
-    }
-    @keyframes fadeInUp {
-      from {opacity: 0; transform: translateY(20px);}
-      to {opacity: 1; transform: translateY(0);}
-    }
-    
     /* Gallery Header */
     .gallery-header {
       position: sticky;
@@ -144,9 +89,11 @@
     
     /* Responsive iframe container */
     .iframe-container {
-      height: calc(100vh - 140px); /* Adjust based on header heights */
       width: 100%;
+      height: 350px;  /* default size */
       overflow: hidden;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     }
     
     .iframe-container iframe {
@@ -160,24 +107,37 @@
       .hero {
         padding: 80px 15px;
       }
-      
       .hero h1 {
         font-size: 1.8rem;
       }
-      
       .hero p {
         font-size: 1rem;
       }
-      
       .gallery-header {
-        top: 56px; /* Height of navbar on mobile */
         font-size: 1.2rem;
         padding: 12px 8px;
       }
-      
       .iframe-container {
-        height: calc(100vh - 124px); /* Adjust for mobile */
+        height: 220px; /* phone size */
       }
+    }
+
+    footer {
+      background: #343a40;
+      color: #fff;
+      text-align: center;
+      padding: 15px;
+      font-size: 0.9rem;
+    }
+
+    /* Animations */
+    @keyframes fadeInDown {
+      from {opacity: 0; transform: translateY(-20px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+    @keyframes fadeInUp {
+      from {opacity: 0; transform: translateY(20px);}
+      to {opacity: 1; transform: translateY(0);}
     }
   </style>
 </head>
