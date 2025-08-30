@@ -88,14 +88,19 @@
     }
     
     /* Responsive iframe container */
-    .iframe-container {
-      width: 100%;
-      height: 400px;  /* default size */
-      overflow: hidden;
-      border-radius: 12px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    }
-    
+ .iframe-container {
+  width: 100%;
+  height: 400px;  /* desktop ke liye default */
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+@media (max-width: 768px) {
+  .iframe-container {
+    height: 50vh; /* phone me half screen ki height */
+  }
+}
     .iframe-container iframe {
       width: 100%;
       height: 100%;
