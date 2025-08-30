@@ -117,6 +117,61 @@
       from {opacity: 0; transform: translateY(20px);}
       to {opacity: 1; transform: translateY(0);}
     }
+    
+    /* Gallery Header */
+    .gallery-header {
+      position: sticky;
+      top: 56px; /* Height of navbar */
+      padding: 15px 10px;
+      background: rgba(0,0,0,0.8);
+      color: #fff;
+      z-index: 99;
+      font-size: 1.4rem;
+      font-weight: bold;
+      text-align: center;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+      transition: all 0.3s ease;
+      cursor: pointer;
+      margin-bottom: 0;
+    }
+    
+    /* Responsive iframe container */
+    .iframe-container {
+      height: calc(100vh - 140px); /* Adjust based on header heights */
+      width: 100%;
+      overflow: hidden;
+    }
+    
+    .iframe-container iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+    
+    /* Mobile adjustments */
+    @media (max-width: 768px) {
+      .hero {
+        padding: 80px 15px;
+      }
+      
+      .hero h1 {
+        font-size: 1.8rem;
+      }
+      
+      .hero p {
+        font-size: 1rem;
+      }
+      
+      .gallery-header {
+        top: 56px; /* Height of navbar on mobile */
+        font-size: 1.2rem;
+        padding: 12px 8px;
+      }
+      
+      .iframe-container {
+        height: calc(100vh - 124px); /* Adjust for mobile */
+      }
+    }
   </style>
 </head>
 <body>
@@ -150,43 +205,14 @@
   </section>
 
   <!-- Gallery -->
- <section id="gallery" class="container my-5">
-  <h2 class="text-center mb-4">Gallery</h2>
-  <div class="row">
-    
-    <!-- Image 1 -->
-      <div class="col-12 mb-3">
-      <div class="card shadow-sm">
-        <img src="img/ganpati.jpeg" class="card-img-top img-fluid" alt="Ganpati 2">
-      </div>
+  <section id="gallery" class="container-fluid p-0">
+    <h2 class="gallery-header" onclick="scrollToTop()">
+      📸 Shree Narayan Cha Raja Yuvak Mandal Gallery
+    </h2>
+    <div class="iframe-container">
+      <iframe src="https://drive.google.com/embeddedfolderview?id=1Q9mnFAPRBxrsj4mn6kgVnhLQkEJq-v8Y#grid"></iframe>
     </div>
-    <div class="col-12 mb-3">
-      <div class="card shadow-sm">
-        <img src="img/1.jpeg" class="card-img-top img-fluid" alt="Ganpati 1">
-      </div>
-    </div>
-
-    <!-- Image 2 -->
-    <div class="col-12 mb-3">
-      <div class="card shadow-sm">
-        <img src="img/2.jpeg" class="card-img-top img-fluid" alt="Ganpati 2">
-      </div>
-    </div>
-
-    <!-- Video -->
-    <div class="col-12 mb-3">
-      <div class="card shadow-sm">
-        <video controls class="w-100">
-          <!-- <source src="img/entry.mp4" type="video/mp4"> -->
-             <source src="https://raw.githubusercontent.com/hirenbhimani21/ganpati21/main/img/entry.mp4" type="video/mp4">
-          
-        </video>
-      </div>
-    </div>
-
-  </div>
-</section>
-
+  </section>
 
   <!-- About -->
   <section id="about" class="section bg-light">
@@ -245,5 +271,26 @@
   <!-- JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/lightbox2@2.11.4/dist/js/lightbox.min.js"></script>
+  
+  <script>
+    // Function to scroll to top of gallery
+    function scrollToTop() {
+      document.querySelector('.iframe-container').scrollTo({ top: 0, behavior: 'smooth' });
+    }
+    
+    // Make gallery header sticky on scroll
+    window.addEventListener('scroll', function() {
+      const header = document.querySelector('.gallery-header');
+      const scrollTop = window.scrollY;
+      
+      if (scrollTop > 200) {
+        header.style.background = 'rgba(0,0,0,0.9)';
+        header.style.padding = '12px 10px';
+      } else {
+        header.style.background = 'rgba(0,0,0,0.8)';
+        header.style.padding = '15px 10px';
+      }
+    });
+  </script>
 </body>
 </html>
