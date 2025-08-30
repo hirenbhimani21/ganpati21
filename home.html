@@ -83,7 +83,7 @@
 
  {
     
-    height: 40vh !important;
+    height: 25vh !important;
  }
     .gallery-card:hover {
       transform: scale(1.03);
@@ -95,7 +95,14 @@
       height: 250px;
       object-fit: cover;
     }
+    .gallery-container iframe {
+  transform: scale(1.2);   /* zoom in */
+  transform-origin: top left;
+  height: 100%;
+  width: 100%;
+}
 
+    
     /* About cards */
     .card {
       border-radius: 12px;
